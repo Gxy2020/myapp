@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
+    android:background="@mipmap/splash"
     tools:context=".MainActivity">
 <!--    相对布局-->
     <RelativeLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="44dp"
-        android:paddingRight="44dp">
+        android:paddingLeft="@dimen/dimen_44dp"
+        android:paddingRight="@dimen/dimen_44dp">
         <Button
             android:id="@+id/btnLogin"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="@dimen/dimen_100dp"
             android:layout_alignParentLeft="true"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="@dimen/dimen_40dp"
             android:text="@string/login"
-            android:textSize="20sp"
+            android:textSize="@dimen/size_20sp"
             android:textColor="#ffffff"
             android:background="@drawable/shape_login_btn"/>
         <Button
             android:id="@+id/btnRegister"
             android:layout_alignParentRight="true"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:textSize="20sp"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="@dimen/dimen_40dp"
+            android:textSize="@dimen/size_20sp"
             android:textColor="#ffffff"
             android:text="@string/register"
             android:background="@drawable/shape_register_btn"/>

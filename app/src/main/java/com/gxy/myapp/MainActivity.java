@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.gxy.myapp.activity.BaseActivity;
 import com.gxy.myapp.activity.LoginActivity;
-
-public class MainActivity extends AppCompatActivity {
+import com.gxy.myapp.activity.RegisterActivity;
+//继承基类
+public class MainActivity extends BaseActivity {
     private Button btnLogin;
     private Button btnRegister;
     @Override
@@ -21,8 +23,19 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
+//                Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+//                startActivity(intent);
+                navigateTo(LoginActivity.class);
+            }
+        });
+        /*注册*/
+        btnRegister=findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent=new Intent(MainActivity.this, RegisterActivity.class);
+//                startActivity(intent);
+                navigateTo(RegisterActivity.class);
             }
         });
 
