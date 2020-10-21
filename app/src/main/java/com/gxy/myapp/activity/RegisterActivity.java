@@ -20,14 +20,22 @@ public class RegisterActivity extends BaseActivity {
     private EditText etAccount;
     private EditText etPwd;
     private Button btnRegister;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+    protected int initLayout() {
+        return R.layout.activity_register;
+    }
+
+    @Override
+    protected void initView() {
         /*获取控件对象*/
         etAccount=findViewById(R.id.et_account);
         etPwd=findViewById(R.id.et_pwd);
         btnRegister=findViewById(R.id.btn_register);
+    }
+
+    @Override
+    protected void initData() {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +45,7 @@ public class RegisterActivity extends BaseActivity {
             }
         });
     }
+
     private void register(String account,String pwd) {
         if (StringUtils.isEmpty(account)) {
             showToast("请输入账号");

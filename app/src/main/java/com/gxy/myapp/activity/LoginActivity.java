@@ -36,14 +36,25 @@ public class LoginActivity extends BaseActivity {
     private EditText etAccount;
     private EditText etPwd;
     private Button btnLogin;
+
+    /**
+     * 初始化布局
+     * @return
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        /*获取控件对象*/
+    protected int initLayout() {
+        return R.layout.activity_login;
+    }
+    /*获取控件对象*/
+    @Override
+    protected void initView() {
         etAccount=findViewById(R.id.et_account);
         etPwd=findViewById(R.id.et_pwd);
         btnLogin=findViewById(R.id.btn_login);
+    }
+    /*数据的封装以及事件的监听*/
+    @Override
+    protected void initData() {
         /*登录点击事件*/
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +65,7 @@ public class LoginActivity extends BaseActivity {
             }
         });
     }
+
     private void login(String account,String pwd) {
         if (StringUtils.isEmpty(account)){
             showToast("请输入账号");
@@ -86,7 +98,7 @@ public class LoginActivity extends BaseActivity {
                 }else {
                     showToastSync("登陆失败");
                 }
-
+                //异步提示
 //                runOnUiThread(new Runnable() {
 //                    @Override
 //                    public void run() {

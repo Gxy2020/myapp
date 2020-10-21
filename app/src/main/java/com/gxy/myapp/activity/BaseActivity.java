@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
-import android.os.PersistableBundle;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,14 +15,33 @@ import androidx.appcompat.app.AppCompatActivity;
  * @Description TODO
  * @Date 2020/10/20 13:42
  */
-public class BaseActivity extends AppCompatActivity {
+public abstract   class BaseActivity extends AppCompatActivity {
     public Context mContent;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContent=this;
+        setContentView(initLayout());
+        initView();
+        initData();
     }
+    /*初始化方法*/
 
+    /**
+     * 初始化布局
+     * @return
+     */
+    protected abstract int initLayout();
+
+    /**
+     * 初始化控件
+     */
+    protected abstract void initView();
+
+    /**
+     * 数据的封装以及事件的监听
+     */
+    protected abstract void initData();
     /**
      * 提示信息
      * @param msg 提示信息内容

@@ -15,11 +15,19 @@ public class MainActivity extends BaseActivity {
     private Button btnLogin;
     private Button btnRegister;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        /*登录*/
+    protected int initLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
         btnLogin=findViewById(R.id.btnLogin);
+        btnRegister=findViewById(R.id.btnRegister);
+    }
+
+    @Override
+    protected void initData() {
+        /*登录*/
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +37,7 @@ public class MainActivity extends BaseActivity {
             }
         });
         /*注册*/
-        btnRegister=findViewById(R.id.btnRegister);
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +46,5 @@ public class MainActivity extends BaseActivity {
                 navigateTo(RegisterActivity.class);
             }
         });
-
     }
 }
