@@ -75,6 +75,7 @@ public class HomeActivity extends BaseActivity {
             public void onTabReselect(int position) {
             }
         });
+        viewPager.setOffscreenPageLimit(mFragments.size());
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

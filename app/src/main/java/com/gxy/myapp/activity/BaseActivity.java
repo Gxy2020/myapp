@@ -26,7 +26,6 @@ public abstract   class BaseActivity extends AppCompatActivity {
         initData();
     }
     /*初始化方法*/
-
     /**
      * 初始化布局
      * @return
